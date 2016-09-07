@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/BigMoney/Documents/BUKContactList/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="f8b1d96fba8339f36edbe7abe9e464a4e737c021">
+        <dex dex="/Users/BigMoney/Documents/BUKContactList/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1e0a72b613d8022d3491c0cddd0e36481df6e63f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/BigMoney/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/BigMoney/Documents/BUKContactList/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-18.0.0_5980888f0839149d9e78fdfb1306a68b1de27c4b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/BigMoney/Documents/BUKContactList/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="ee860af8436c0fde0cc1684324ae2008a809c437">
+        <dex dex="/Users/BigMoney/Documents/BUKContactList/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_168afd346022c46c9d04736b95f98a01c2641e0a/classes.dex" />
+    </item>
+
+</items>
