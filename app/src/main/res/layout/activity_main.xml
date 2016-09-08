@@ -78,6 +78,14 @@
         android:text="연락처등록" />
 
     <Button
+        android:id="@+id/button_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="전화걸기" />
+
+    <Button
         android:id="@+id/button_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

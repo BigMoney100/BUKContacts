@@ -8,6 +8,7 @@ import java.util.Locale;
 import android.app.Activity;
 import android.content.ContentProviderOperation;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -42,6 +43,8 @@ public class MainActivity extends Activity {
         b_load.setOnClickListener(mClickListener);
         Button b_delete = (Button) findViewById(R.id.button_delete);
         b_delete.setOnClickListener(mClickListener);
+        Button b_call = (Button) findViewById(R.id.button_call);
+        b_call.setOnClickListener(mClickListener);
 
         listView = (ListView) findViewById(R.id.listView);
         itemArrayAdapter = new ItemArrayAdapter(getApplicationContext(), R.layout.item_layout);
@@ -104,13 +107,15 @@ public class MainActivity extends Activity {
 
         @Override
         public void onClick(View v) {
-            int cntInserted, cntDeleted;
+            int cntInserted, cntDeleted, cntCalled;
             int tempSize;
+            String telnumber;
+
             switch (v.getId()) {
                 case R.id.button_load:
                     cntInserted = 0;
                     tempSize = itemArrayAdapter.getCount();
-                    for (int a = 1; a < tempSize; a++) {
+                    for (int a = 0; a < tempSize; a++) {
                         String[] tempitems = itemArrayAdapter.getItem(a);
 
                         if (itemArrayAdapter.getChecked(a)) {
@@ -129,7 +134,7 @@ public class MainActivity extends Activity {
                 case R.id.button_delete:
                     cntDeleted = 0;
                     tempSize = itemArrayAdapter.getCount();
-                    for (int a = 1; a < tempSize; a++) {
+                    for (int a = 0; a < tempSize; a++) {
                         String[] tempitems = itemArrayAdapter.getItem(a);
 
                         if (itemArrayAdapter.getChecked(a)) {
@@ -143,6 +148,30 @@ public class MainActivity extends Activity {
                     Toast.makeText(getApplicationContext(), "Complete : " + cntDeleted + " deleted",
                             Toast.LENGTH_SHORT).show();
                     break;
+
+                case R.id.button_call:
+                    cntCalled = 0;
+                    telnumber = "";
+                    tempSize = itemArrayAdapter.getCount();
+                    for (int a = 0; a < tempSize; a++) {
+                        String[] tempitems = itemArrayAdapter.getItem(a);
+
+                        if (itemArrayAdapter.getChecked(a)) {
+                            telnumber = tempitems[1];
+                            cntCalled++;
+
+                            break;
+                        }
+                    }
+
+                    if (cntCalled > 0) {
+                        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + telnumber));
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+
+                    break;
+
             }
         }
     };
